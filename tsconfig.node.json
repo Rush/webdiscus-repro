@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "commonjs",
+    "lib": [
+      "es2021",
+    ],
+    "sourceMap": true,
+    "noUnusedLocals": false,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "types": ["webpack-env", "node", "dom"],
+    "paths": {
+      "shared/*": [ "shared/*" ],
+    },
+    "outDir": "../"
+  },
+  "include": [
+    "./server/**/*.ts",
+  ],
+  "exclude": [
+    "./server/**/*.spec.ts"
+  ]
+}
