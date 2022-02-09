@@ -122,7 +122,9 @@ export default function (env: any, { mode }: WebpackOptions) {
       unsafeCache: true,
       extensions: ['.ts', '.js'],
       alias: {
-        assets: resolve(__dirname, '../magma/public/assets').replace(/\\/g, '/'),
+        assets: process.env.REPRODUCE ?
+          [ resolve(__dirname, 'assets').replace(/\\/g, '/'), resolve(__dirname, 'assets2').replace(/\\/g, '/') ]
+          : resolve(__dirname, 'assets').replace(/\\/g, '/')
       },
       plugins: [
         new TsconfigPathsPlugin({

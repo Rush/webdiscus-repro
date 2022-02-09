@@ -12,7 +12,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "types": ["webpack-env", "node", "dom"],
+    "types": ["webpack-env", "node"],
     "paths": {
       "shared/*": [ "shared/*" ],
     },
