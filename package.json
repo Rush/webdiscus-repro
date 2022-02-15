@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "reproduce": "REPRODUCE=1 webpack --config ./webpack.node.ts --mode=production",
-    "build": "webpack --config ./webpack.node.ts --mode=production"
+    "reproduce": "REPRODUCE=1 webpack --config ./webpack.node.ts --mode=production && node server/mainPublic.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.13",
     "@types/webpack-env": "^1.16.3",
-    "@webdiscus/pug-loader": "^1.7.0",
+    "@webdiscus/pug-loader": "^1.7.1",
     "file-loader": "^6.2.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",

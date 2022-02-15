@@ -3,27 +3,7 @@ extends layout-ng
 append head
   - var bodyClass = 'error-body';
 
-mixin svgIcon(iconData, currentColor = 'currentColor')
-  - const [width, height, _, __, paths] = iconData.icon;
-  svg(xmlns="http://www.w3.org/2000/svg" viewBox=`0 0 ${width} ${height}` aria-hidden="true" focusable="false" class="svg-icon fa-fw")
-    if paths instanceof Array
-      each pathData in paths
-        path(fill=currentColor d=pathData)
-    else
-      path(fill=currentColor, d=paths)
-
 block body
-  center.error-page.use-magma-styles
-    .error-page-content
-      - const osName = parsedUA?.os?.name;
-      - const osVersion = parsedUA?.os?.version;
-      .browser-suggestion
-        div
-          | For best performance users on <b>#{osName}</b> should use
-          span.browser-icon
-            +svgIcon(browserIcons[recommendedBrowser])
-          | <b>#{recommendedBrowser}</b>
-      if recommendedBrowsersLink
-        div(style="margin-top: 20px")
-          | See a complete list of #[a(href=recommendedBrowsersLink, title="Recommended browsers") recommended browsers]
+  body= baseHref
+
 
